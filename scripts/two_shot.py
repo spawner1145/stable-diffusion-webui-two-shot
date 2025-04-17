@@ -127,7 +127,7 @@ class Script(scripts.Script):
                     end_at_step = gr.Slider(minimum=0, maximum=150, step=1, label="end at this step", elem_id=f"cd_{id_part}_end_at_this_step", value=20)
 
                 visualize_button = gr.Button(value="Visualize")
-                visual_regions = gr.Gallery(label="Regions").style(grid=(4, 4, 4, 8), height="auto")
+                visual_regions = gr.Gallery(label="Regions", columns=4, height="auto")
 
                 visualize_button.click(fn=self.do_visualize, inputs=[divisions, positions, weights], outputs=[visual_regions])
 
@@ -223,5 +223,3 @@ class Script(scripts.Script):
 
     def postprocess(self, *args):
         return
-
-
